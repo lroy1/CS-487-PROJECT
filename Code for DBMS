@@ -1,3 +1,134 @@
 create table Ride (startPoint VARCHAR(100), endPoint VARCHAR(100), time timestamp, timeDropOff timestamp, rate FLOAT, pool BOOLEAN, passengers INTEGER, primary key (sta
 , endPoint, timestamp));
 create table questionnare (driverReview text, Question VARCHAR(1000), answer VARCHAR(1000), stars INTEGER);
+
+
+
+
+
+
+
+
+////////////Driver///////////
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
+
+public class Driver {
+
+	public static void main(String[] args) throws SQLException{
+		String url = "jdbc:postgresql://localhost/template1";
+        String user = "admin";
+        String password = "";
+        try (Connection connection = DriverManager.getConnection(url, user, password);){
+			String inventoryTable = "CREATE TABLE Driver("
+					+ "F_Name VARCHAR (25) NOT NULL,"
+					+ "L_Name VARCHAR (25) NOT NULL,"
+					+ "Email VARCHAR (50) NOT NULL,"
+					+ "Car_id INTEGER,"
+					+ "Password VARCHAR (25) NOT NULL,"
+					+ "Avg_Rating NUMERIC (8,2),"
+					+ "Bank_Account_Num INTEGER,"
+					+ "FOREIGN KEY (Bank_Account_Num) REFERENCES BankingInfo (Account_Num),"
+					+ "FOREIGN KEY (Car_id) REFERENCES Car (License_Plate),"
+					+ "PRIMARY KEY (Email)"
+					+ ");";
+			Statement stm = connection.createStatement();
+			stm.executeUpdate(driverTable);
+			stm.close();
+			connection.close();
+			
+		}
+		catch(Exception e) 
+        { 
+            System.out.println(e); 
+        } 
+
+	}
+
+}
+
+
+////////////CAR///////////
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
+
+public class Car {
+
+	public static void main(String[] args) throws SQLException{
+		String url = "jdbc:postgresql://localhost/template1";
+        String user = "admin";
+        String password = "";
+        try (Connection connection = DriverManager.getConnection(url, user, password);){
+			String inventoryTable = "CREATE TABLE Car("
+					+ "Car_Model VARCHAR (25),"
+					+ "License_Plate INTEGER NOT NULL,"
+					+ "Num_of_trips INTEGER,"
+					+ "Color VARCHAR (25),"
+					+ "PRIMARY KEY (License_Plate)"
+					+ ");";
+			Statement stm = connection.createStatement();
+			stm.executeUpdate(carTable);
+			stm.close();
+			connection.close();
+			
+		}
+		catch(Exception e) 
+        { 
+            System.out.println(e); 
+        } 
+
+	}
+
+}
+
+
+////////////Banking INFO///////////
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
+
+public class BankingInfo {
+
+	public static void main(String[] args) throws SQLException{
+		String url = "jdbc:postgresql://localhost/template1";
+        String user = "admin";
+        String password = "";
+        try (Connection connection = DriverManager.getConnection(url, user, password);){
+			String inventoryTable = "CREATE TABLE BankingInfo("
+					+ "Account_Num INTEGER NOT NULL,"
+					+ "Routing_Num INTEGER NOT NULL,"
+					+ "F_Name VARCHAR (25),"
+					+ "L_Name VARCHAR (25),"
+					+ "PRIMARY KEY (Account_Num)"
+					+ ");";
+			Statement stm = connection.createStatement();
+			stm.executeUpdate(bankingInfoTable);
+			stm.close();
+			connection.close();
+			
+		}
+		catch(Exception e) 
+        { 
+            System.out.println(e); 
+        } 
+
+	}
+
+}
