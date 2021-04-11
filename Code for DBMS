@@ -136,7 +136,7 @@ public class BankingInfo {
 
 ///////////
 //////////
-//Driver
+//Customer
 ////////
 
 
@@ -149,11 +149,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Scanner;
 
-public class Driver {
+public class customer {
 	public static void main(String[] args) throws SQLException{
 		String url = "";
         
-		String customerTable = "CREATE TABLE Driver( "
+		String customerTable = "CREATE TABLE customer( "
 				+ " FirstName  VARCHAR(255) NOT NULL,"
 				+ " LastName  VARCHAR(255) NOT NULL,"
 				+ " Email VARCHAR(60) NOT NULL UNIQUE, " 
