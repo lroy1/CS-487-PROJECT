@@ -132,3 +132,69 @@ public class BankingInfo {
 	}
 
 }
+
+
+///////////
+//////////
+//Driver
+////////
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
+
+public class Driver {
+	public static void main(String[] args) throws SQLException{
+		String url = "";
+        
+		String customerTable = "CREATE TABLE Driver( "
+				+ " FirstName  VARCHAR(255) NOT NULL,"
+				+ " LastName  VARCHAR(255) NOT NULL,"
+				+ " Email VARCHAR(60) NOT NULL UNIQUE, " 
+				+ " password  VARCHAR(255) NOT NULL,"
+				+ " address VARCHAR(255) NOT NULL,"
+				+ " paymentID INTEGER(255) NOT NULL UNIQUE,"
+				+ " Primary Key (Email), " 
+				+ " FOREIGN KEY (paymentID) REFERENCES payment(ID));";			
+
+	}
+
+}
+
+/////////
+////////
+//payment info
+////
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
+
+public class payment {
+	public static void main(String[] args) throws SQLException{
+		String url = "";
+        
+		String customerTable = "CREATE TABLE paymentInfo( "
+				+ " Cardtype  VARCHAR(255) NOT NULL,"
+				+ " Name  VARCHAR(255) NOT NULL,"
+				+ " CardNum VARCHAR(60) NOT NULL UNIQUE, " 
+				+ " ExpireMonth  INTEGER(50) NOT NULL,"
+				+ " ExpireYear  INTEGER(50) NOT NULL,"
+				+ " CVC INTEGER(255) NOT NULL,"
+				+ " paymentID INTEGER(255) NOT NULL UNIQUE,"
+				+ " Primary Key (paymentID), " 
+				+ " FOREIGN KEY (paymentID) REFERENCES Driver(paymentID));";			
+
+	}
+}
