@@ -58,15 +58,19 @@ public class Ride {
         String password = "";
         try (Connection connection = DriverManager.getConnection(url, user, password);){
 			String inventoryTable = "CREATE TABLE Ride("
-					+ "startPoint VARCHAR (100) NOT NULL,"
-					+ "endPoint VARCHAR (100) NOT NULL,"
-					+ "time TIMESTAMP NOT NULL,"
-					+ "timeDropOff TIMESTAMP,"
-					+ "rate FLOAT NOT NULL,"
-					+ "pool BOOLEAN,"
-					+ "passengers INTEGER,"
-					+ "question_id INTEGER UNIQUE NOT NULL,"
+					+ " startPoint VARCHAR (100) NOT NULL,"
+					+ " endPoint VARCHAR (100) NOT NULL,"
+					+ " time TIMESTAMP NOT NULL,"
+					+ " timeDropOff TIMESTAMP,"
+					+ " rate FLOAT NOT NULL,"
+					+ " pool BOOLEAN,"
+					+ " C_Email VARCHAR(60) NOT NULL UNIQUE,"
+					+ " D_Email VARCHAR(60) NOT NULL UNIQUE,"
+					+ " passengers INTEGER,"
+					+ " question_id INTEGER UNIQUE NOT NULL,"
 					+ "FOREIGN KEY (question_id) REFERENCES Ride (question_id),"
+					+ "FOREIGN KEY (C_Email) REFERENCES customer (Email),"
+					+ "FOREIGN KEY (D_Email) REFERENCES Driver (Email),"
 					+ "PRIMARY KEY (startPoint, endPoint, timestamp),"
 					+ ");";
 			Statement stm = connection.createStatement();
