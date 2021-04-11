@@ -1,1 +1,3 @@
-
+create table Ride (startPoint VARCHAR(100), endPoint VARCHAR(100), time timestamp, timeDropOff timestamp, rate FLOAT, pool BOOLEAN, passengers INTEGER, primary key (sta
+, endPoint, timestamp));
+create table questionnare (driverReview text, Question VARCHAR(1000), answer VARCHAR(1000), stars INTEGER);
