@@ -18,14 +18,14 @@ public class Questionnare {
         try (Connection connection = DriverManager.getConnection(url, user, password);){
 			String inventoryTable = "CREATE TABLE Questionnare("
 					+ "driverReview text NOT NULL,"
-					+ "question VARCHAR(1000) NOT NULL,"
+					+ "question_id INTEGER UNIQUE NOT NULL,"
 					+ "answer VARCHAR (1000) NOT NULL,"
 					+ "stars INTEGER,"
-					+ "FOREIGN KEY (question) REFERENCES Ride (question),"
+					+ "FOREIGN KEY (question_id) REFERENCES Ride (question_id),"
 					+ "PRIMARY KEY (driverReview, question)"
 					+ ");";
 			Statement stm = connection.createStatement();
-			stm.executeUpdate(driverTable);
+			stm.executeUpdate(questionnaireTable);
 			stm.close();
 			connection.close();
 			
@@ -65,11 +65,12 @@ public class Ride {
 					+ "rate FLOAT NOT NULL,"
 					+ "pool BOOLEAN,"
 					+ "passengers INTEGER,"
-					+ "question VARCHAR(1000),"
+					+ "question_id INTEGER UNIQUE NOT NULL,"
+					+ "FOREIGN KEY (question_id) REFERENCES Ride (question_id),"
 					+ "PRIMARY KEY (startPoint, endPoint, timestamp),"
 					+ ");";
 			Statement stm = connection.createStatement();
-			stm.executeUpdate(driverTable);
+			stm.executeUpdate(rideTable);
 			stm.close();
 			connection.close();
 			
