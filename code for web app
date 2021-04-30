@@ -1,1 +1,152 @@
 
+//rider profile//
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Update details' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='44px' componentLinkName='Update_Rider_Profile' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Book A Cab' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenPage' target='same-window' cornerRadius='44px' componentLinkName='Book_A_Ride_Page_w_Price' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc>
+          <button text='Profile' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='44px' componentLinkName='All_Rider_Profiles' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Update Payment info' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='44px' componentLinkName='Payment_Info_Rider' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc>
+          <button text='Make a Payment' size='16px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='45px' componentLinkName='Make_A_Payment' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc>
+          <button text='Write A Review' size='16px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='45.3333px' componentLinkName='Ride_Review' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+
+
+//accept and decline//
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#D7A3F0' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Accept Ride' size='15px' color='#FFFFFF' bgColor='#047B33' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenPage' target='same-window' cornerRadius='44px' componentLinkName='ride_accepted' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#D7A3F0' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Decline Ride' size='15px' color='#FFFFFF' bgColor='#CB3B23' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenPage' target='same-window' cornerRadius='44px' componentLinkName='Driver_Profile' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+//Ride Accepted Page //
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' hAlign='center' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc padding='5px'>
+          <pr>
+            <pc>
+              <text type='Text' value='Yay! You have accepted this ride!' size='35px' color='#7C1899' bold='true'> </text>
+            </pc>
+          </pr>
+          <pr>
+            <pc>
+              <text type='Text' value='Pick up your customer' size='15px' color='#FFFFFF' bgColor='transparent'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Map - Pick up location' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='44px' componentLinkName='Map_report' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+
+//Book a ride page//
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#BFEDB2' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Calculate Price' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='ExecuteFunction' cornerRadius='44px' functionName='calculatePrice1' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+//Function to calculate price or ride//
+void calculatePrice()
+{
+	price = randomNumber(6,68);
+	info "you will earn - $ " + price;
+}
+void calculatePrice1()
+{
+	price = randomNumber(6,68);
+	info "The cost of the ride $ " + price;
+}
+
+//end//
