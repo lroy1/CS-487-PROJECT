@@ -200,9 +200,10 @@ public class BankingInfo {
 			String inventoryTable = "CREATE TABLE BankingInfo("
 					+ "Account_Num INTEGER NOT NULL,"
 					+ "Routing_Num INTEGER NOT NULL,"
+					+ "Banking_ID INTEGER UNIQUE NOT NULL,"
 					+ "F_Name VARCHAR (25),"
 					+ "L_Name VARCHAR (25),"
-					+ "PRIMARY KEY (Account_Num)"
+					+ "PRIMARY KEY (Banking_ID)"
 					+ ");";
 			Statement stm = connection.createStatement();
 			stm.executeUpdate(bankingInfoTable);
