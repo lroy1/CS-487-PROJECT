@@ -1,3 +1,102 @@
+//HOME PAGE//
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#FFFFFF' padding='0px' vAlign='middle'>
+      <pr height='fill' width='fill'>
+        <pc width='100%' bgColor='#A3E6AF' paddingTop='17px' paddingLeft='17px' paddingRight='17px' paddingBottom='0px' hAlign='center'>
+          <pr height='auto' width='auto'>
+            <pc>
+              <image color='#FFFFFF' bgColor='#2D2D2D' height='450px' type='gallery' value='Screen_Shot_2021-04-30_at_12.11.28_PM.png' marginLeft='10px' marginBottom='0px' marginTop='0px' cornerRadius='0px' /> </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr height='fill' width='fill'>
+        <pc width='50%' bgColor='#A3E6AF' paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' hAlign='center'>
+          <pr height='auto' width='auto'>
+            <pc>
+              <button text='Login' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenPage' target='same-window' cornerRadius='44px' componentLinkName='login_page' /> </pc>
+          </pr>
+        </pc>
+        <pc width='50%' bgColor='#A3E6AF' padding='20px' vAlign='middle' action='OpenPage' target='same-window' componentLinkName='Sign_Up'>
+          <pr height='auto' width='auto'>
+            <pc vAlign='middle'>
+              <button text='Sign up' size='15px' fontFamily='roboto-regular' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenPage' target='same-window' cornerRadius='44px' componentLinkName='Sign_Up' /> </pc>
+          </pr>
+        </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+//Driver profile//
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Update details' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='44px' componentLinkName='Update_Driver_Profile' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='View Profile' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='44px' componentLinkName='All_Update_Driver_Profiles' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='View Review' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='44px' componentLinkName='All_Ride_Reviews' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc>
+          <button text='Bookings' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='44px' componentLinkName='Bookings' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc vAlign='middle'>
+          <button text='Enter Banking Info' size='15px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenForm' target='same-window' cornerRadius='44px' componentLinkName='Driver_Banking_info' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+<panel>
+  <pr height='fill' width='fill'>
+    <pc width='100%' bgColor='#A3E6AF' padding='20px' vAlign='middle'>
+      <pr height='auto' width='auto'>
+        <pc>
+          <button text='View Payments' size='16px' color='#FFFFFF' bgColor='#7C1899' type='rounded' marginLeft='0px' marginRight='0px' marginBottom='0px' marginTop='0px' action='OpenReport' target='same-window' cornerRadius='45.3333px' componentLinkName='Make_A_Payment_Report' /> </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+
+
 
 //rider profile//
 <panel>
