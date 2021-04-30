@@ -1,4 +1,204 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
 
+public class postgresTest {
+    public static void main(String[] args){
+    	    String url = "jdbc:postgresql://localhost/template1";
+        String user = "admin";
+        String password = "";
+        String sql;
+        try (Connection connection = DriverManager.getConnection(url, user, password);)
+		{
+        	Statement statement = connection.createStatement();
+
+         sql = " create type privileges as enum('admin', 'rider', 'driver'); "  		
+            		+ "CREATE TABLE User(" +
+            		" ID         INTEGER NOT NULL UNIQUE," + 
+            		" Password   varchar(255) NOT NULL ," + 
+            		" FirstName  varchar(255) NOT NULL ," + 
+            		" LastName   varchar(255) NOT NULL ," +
+            		" Privilege  privileges NOT NULL ," + 
+            		" LoginTime  date," + 
+            		" LogoutTime date," + 
+            		"PRIMARY KEY (ID)" + 
+            		//"FOREIGN KEY  (ID) REFERENCES Inventory(ID)" + 
+            		");"; 
+
+            statement.executeUpdate(sql);
+
+            //login
+			Scanner in = new Scanner(System.in);
+			boolean loggedin = false;
+            ResultSet rs;
+            String input_username,input_password, privileges;
+            do {
+            System.out.print("Enter username (hint: your firstname): ");
+            input_username = in.nextLine();
+            System.out.print("Enter Password: ");
+            input_password = in.nextLine();   
+            statement = connection.createStatement();   	
+            // Execute SQL statement returns a ResultSet object.
+            sql = "Select * from Employee_user where firstname='"+input_username+"' and password='"+input_password+"';";
+            rs = statement.executeQuery(sql);
+            System.out.println();
+            } while(!rs.next());
+           privileges = rs.getString("privilege");
+            int user_id = rs.getInt("ID");
+            System.out.println("Welcome, You are a(n) "+privileges +" department");
+            loggedin = true;
+            //SET LOGIN TIME
+            statement = connection.createStatement();   	
+            sql = "update employee_user SET logintime=CURRENT_DATE WHERE ID="+user_id+";";
+            statement.executeUpdate(sql);
+
+    
+	if (privileges.equals("admin") ){
+            	char selection = ' ';
+		System.out.println("Enter 'V' to View tables, or 'L' to logout");
+		selection = in.next().charAt(0);
+		if (selection == 'L' ){
+			break;
+		}
+		
+		else if (selection =='V'){
+			System.out.println ("which table would you like to View: type 'R' for Rider, 'D' for Drivers, 'B' for Bookings");
+			String nextentry= in.next();
+			if(nextentry.equals("R")){
+				System.out.println("Enter Rider Email");
+				String r_email = in.next();
+				
+				sql="SELECT * FROM customer WHERE Email is ="+r_email+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Customer info");
+			}
+			else if (nextentry.equals("D")){
+				System.out.println("Enter Driver Email");
+				String d_email = in.next();
+				
+				sql="SELECT * FROM driver WHERE Email is ="+d_email+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Driver info");
+			}
+			else if(nextentry.equals ("B")){
+				System.out.println("Enter Ride ID");
+				int r_id = Integer.parseInt(in.next());
+				
+				sql="SELECT * FROM Ride WHERE ride_id = "+r_id+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Booking info");
+			}
+		
+		}
+	}
+	
+	else if (privileges.equals("rider")){
+		 System.out.println("Enter 'V' to View info, 'U' to update payment info, or 'L' to logout");
+		 selection = in.next().charAt(0);
+		if (selection == 'L' ){
+			break;
+		}
+		
+		else if(selection == 'U'){
+			System.out.println("Enter Payment ID");
+			int p_id = Integer.parseInt(in.next());
+			System.out.println("New Credit Card Number");
+			int c_id = Integer.parseInt(in.next());
+			System.out.println("New Card Type");
+			String type = in.next();
+			System.out.println("New CVC");
+			int cvc = Integer.parseInt(in.next());
+			System.out.println("New Expiry Month");
+			int month = Integer.parseInt(in.next());
+			System.out.println("New Expiry Year");
+			int year = Integer.parseInt(in.next());
+				
+				sql="UPDATE payment SET CardNum="+c_id+", Cardtype="+type+", CVC ="+cvc+"', ExpireMonth="+month+", ExpireYear ="+year+" WHERE paymentID="+p_id+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Payment Info Updated");
+		}
+		 
+		else {
+			System.out.println("Enter email");
+			String email = in.next();
+			
+			sql="SELECT * FROM customer WHERE Email = "+email+";"; 
+			statement.executeUpdate(sql);
+			System.out.println("customer info");
+		}
+
+
+	}
+	
+	else if(privileges.equals("driver")){
+		System.out.println("Enter 'C' to update car info, 'U' to update banking info, or 'L' to logout");
+		 selection = in.next().charAt(0);
+		if (selection == 'L' ){
+			break;
+		}
+		
+		else if(selection == 'U'){
+			System.out.println("Enter Banking_ID");
+			int b_id = Integer.parseInt(in.next());
+			System.out.println("New Account Number");
+			int c_id = Integer.parseInt(in.next());
+			System.out.println("New Routing Num");
+			int r_num = Integer.parseInt(in.next());
+			System.out.println("First Name");
+			String f_name = in.next();
+			System.out.println("Last Name");
+			String l_name = in.next();
+			
+				
+				sql="UPDATE BankingInfo SET Account_Num="+c_id+", Routing_Num="+r_num+", F_Name="+f_name+"', L_Name="+l_name+" WHERE Banking_ID="+b_id+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Banking Info Updated");
+		}
+		 
+		else {
+			System.out.println("Car_ID");
+			int c_id = Integer.parseInt(in.next());
+			System.out.println("New License Plate");
+			String license = in.next();
+			System.out.println("New Color");
+			String color = in.next();
+			System.out.println("New Car Model");
+			String car_model = in.next();
+			
+				
+				sql="UPDATE Car SET License_Plate="+license+", Color="+color+", Car_Model="+car_model+"+" WHERE car_ID="+c_id+";"; 
+				statement.executeUpdate(sql);
+				System.out.println("Car Info Updated");
+			
+		}
+
+
+	
+	
+	}
+	
+	
+	}
+	
+	
+	
+		//end of try statement so end of code here
+		catch (SQLException ex) {
+		
+		    Logger lgr = Logger.getLogger(postgresTest.class.getName());
+		    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+		}
+ 
+
+    
+ 
+    }
+}
 ////////////Questionnare///////////
 import java.sql.Connection;
 import java.sql.DriverManager;
