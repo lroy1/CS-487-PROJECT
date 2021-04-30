@@ -159,10 +159,11 @@ public class Car {
         try (Connection connection = DriverManager.getConnection(url, user, password);){
 			String inventoryTable = "CREATE TABLE Car("
 					+ "Car_Model VARCHAR (25),"
-					+ "License_Plate INTEGER NOT NULL,"
+					+ "car_ID INTEGER UNIQUE NOT NULL
+					+ "License_Plate VARCHAR NOT NULL,"
 					+ "Num_of_trips INTEGER,"
 					+ "Color VARCHAR (25),"
-					+ "PRIMARY KEY (License_Plate)"
+					+ "PRIMARY KEY (car_ID)"
 					+ ");";
 			Statement stm = connection.createStatement();
 			stm.executeUpdate(carTable);
